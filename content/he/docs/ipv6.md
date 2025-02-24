@@ -1,7 +1,6 @@
 ---
 title: תמיכה ב־IPv6
 slug: ipv6-support
-top_graphic: 1
 date: 2020-02-07
 lastmod: 2020-02-07
 show_lastmod: 1
@@ -34,4 +33,4 @@ show_lastmod: 1
 
 ## קבלת עזרה
 
-אם ברצונך לקבל סיוע בניתוח תקלה שקשורה ב־IPv6 נא לבקר ב[פורום הקהילתי](https://community.letsencrypt.org) שלנו.
+לקבלת סיוע בניתוח תקלה שקשורה ב־IPv6 נא לבקר ב[פורום הקהילתי](https://community.letsencrypt.org) שלנו.

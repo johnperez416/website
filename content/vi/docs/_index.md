@@ -1,6 +1,5 @@
 ---
-title: Documentation
-top_graphic: 1
+title: Tài liệu
 menu:
   main:
     weight: 10

@@ -5,7 +5,7 @@ command = "hugo -d public"
 
 [build.environment]
 # same as .github/workflows/test.yaml
-HUGO_VERSION = "0.89.1"
+HUGO_VERSION = "0.130.0"
 
 # https://docs.netlify.com/routing/headers/#syntax-for-the-netlify-configuration-file
 # headers must be the same than in config/_default/server.toml (for Hugo)
@@ -48,10 +48,14 @@ Content-Security-Policy = """
         https://donorbox.org
         https://js.stripe.com/v3/
         https://sdks.shopifycdn.com
+        https://www.paypal.com
+        https://www.paypalobjects.com
+        https://widget.thegivingblock.com
+        https://*.shift4.com
     ;
     img-src 'self' data: blob:
         https://www.google-analytics.com
-        https://www.paypal.com
+        https://*.paypal.com
         https://www.paypalobjects.com
         https://ak2s.abmr.net
         https://ak1s.abmr.net
@@ -66,12 +70,17 @@ Content-Security-Policy = """
         https://bid.g.doubleclick.net
         https://js.stripe.com/v3/
         https://js.stripe.com/v2/
+        https://www.paypal.com
+        https://outreach.abetterinternet.org
+        https://app.netlify.com
+        https://widget.thegivingblock.com/
     ;
     connect-src 'self'
         https://d4twhgtvn0ff5.cloudfront.net/
         https://letsencrypt-merch.myshopify.com
         https://monorail-edge.shopifysvc.com
-
+        https://www.paypal.com
+        https://www.google-analytics.com
     ;
 """
 
@@ -105,6 +114,24 @@ status = 302
 force = false
 
 [[redirects]]
+from = "/fosdem"
+to = "https://www.isrg.org/fosdem"
+status = 302
+force = false
+
+[[redirects]]
+from = "/become-a-sponsor"
+to = "https://www.abetterinternet.org/sponsor"
+status = 302
+force = false
+
+[[redirects]]
+from = "/sponsor"
+to = "https://www.abetterinternet.org/sponsor"
+status = 302
+force = false
+
+[[redirects]]
 from = "/certs"
 to = "/certificates"
 status = 302
@@ -123,6 +150,12 @@ status = 302
 force = false
 
 [[redirects]]
+from = "/ca/*"
+to = "/ca/404.html"
+status = 404
+force = false
+
+[[redirects]]
 from = "/de/*"
 to = "/de/404.html"
 status = 404
@@ -131,6 +164,12 @@ force = false
 [[redirects]]
 from = "/es/*"
 to = "/es/404.html"
+status = 404
+force = false
+
+[[redirects]]
+from = "/el/*"
+to = "/el/404.html"
 status = 404
 force = false
 
@@ -165,6 +204,12 @@ status = 404
 force = false
 
 [[redirects]]
+from = "/pl/*"
+to = "/pl/404.html"
+status = 404
+force = false
+
+[[redirects]]
 from = "/pt-br/*"
 to = "/pt-br/404.html"
 status = 404
@@ -189,6 +234,24 @@ status = 404
 force = false
 
 [[redirects]]
+from = "/ta/*"
+to = "/ta/404.html"
+status = 404
+force = false
+
+[[redirects]]
+from = "/th/*"
+to = "/th/404.html"
+status = 404
+force = false
+
+[[redirects]]
+from = "/tr/*"
+to = "/tr/404.html"
+status = 404
+force = false
+
+[[redirects]]
 from = "/zh-cn/*"
 to = "/zh-cn/404.html"
 status = 404
@@ -203,6 +266,12 @@ force = false
 [[redirects]]
 from = "/vi/*"
 to = "/vi/404.html"
+status = 404
+force = false
+
+[[redirects]]
+from = "/hu/*"
+to = "/hu/404.html"
 status = 404
 force = false
 
@@ -228,4 +297,13 @@ force = true
 from = "https://www.letsencrypt.com/*"
 to = "https://letsencrypt.org/"
 status = 302
+force = true
+
+[[redirects]]
+# Certbot (and other) clients link to the Terms of Service with a `.` after them
+# This is a convenience to allow copying the URL with that `.`
+# It should be updated on ToS changes, but is not a compliance-critical path.
+from = "/documents/LE-SA-v1.4-April-3-2024.pdf."
+to = "/documents/LE-SA-v1.4-April-3-2024.pdf"
+status = 301
 force = true

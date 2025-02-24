@@ -1,17 +1,16 @@
 ---
 title: Aggiornamenti del protocollo ACME
 slug: acme-protocol-updates
-top_graphic: 1
 lastmod: 2019-10-07
 show_lastmod: 1
 ---
 
 
-Il protocollo [IETF-standardizzato](https://letsencrypt.org/2019/03/11/acme-protocol-ietf-standard.html) ACME, [RFC 8555](https://datatracker.ietf.org/doc/rfc8555/), è il fondamento su cui funziona Let's Encrypt.
+Il protocollo [IETF-standardizzato](https://letsencrypt.org/2019/03/11/acme-protocol-ietf-standard.html) ACME, [RFC 8555](https://datatracker.ietf.org/doc/rfc8555/), è le fondamenta su cui funziona Let's Encrypt.
 
 # API Endpoints
 
-Al momento abbiamo i seguenti endpoint API. Si prega di consultare [la nostra documentazione sulle divergenze](https://github.com/letsencrypt/boulder/blob/master/docs/acme-divergences.md) per confrontare la loro implementazione con la specifica ACME.
+Al momento abbiamo i seguenti endpoint API. Si prega di consultare [la nostra documentazione sulle divergenze](https://github.com/letsencrypt/boulder/blob/main/docs/acme-divergences.md) per confrontare la loro implementazione con la specifica ACME.
 
 ## ACME v2 (RFC 8555)
 
@@ -25,7 +24,7 @@ Al momento abbiamo i seguenti endpoint API. Si prega di consultare [la nostra do
 
 # Nuove funzionalità ACME retrocompatibili
 
-Ogni tanto Let's Encrypt può implementare nuove funzionalità retrocompatibili per gli endpoint API esistenti. In genere vengono introdotte nuove funzionalità retrocompatibili perché abbiamo deciso di implementare una parte della specifica ACME che era stata implementata prima.
+Ogni tanto Let's Encrypt può implementare nuove funzionalità retro compatibili per gli endpoint API esistenti. In genere vengono introdotte nuove funzionalità retro compatibili perché abbiamo deciso d'implementare una parte della specifica ACME che era stata implementata prima.
 
 Quando vengono introdotte nuove funzionalità agli endpoint API esistenti, le caratteristiche sono sempre specificate chiaramente in una specifica ACME pubblica e non bloccherà i client correttamente implementati.
 

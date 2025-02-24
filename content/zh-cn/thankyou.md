@@ -1,10 +1,16 @@
 ---
-title: 感谢您对 ISRG 的捐赠
+title: 谢谢
 slug: thankyou
-top_graphic: 2
-date: 2018-04-12
+date: 2022-12-02
 ---
 
-感谢您为我们所有人支持一个更安全、更尊重隐私的 Web 环境。关注我们的 Twitter 官方帐户 [Twitter @letsencrypt](https://twitter.com/letsencrypt) 以了解我们的最新进展。
-
-您的交易已完成，您的购买收据已通过电子邮件发送给您。您可以登录 [www.paypal.com](https://www.paypal.com) 查看此交易的详细信息。
+  <div class="container">
+    <p><strong>感谢您的捐款</strong></p>
+    <p>谨代表互联网安全研究组（ISRG）的所有成员，我们在此衷心感谢您对本项目的认可与支持。</p>
+    <p>一封包含捐款收据的邮件已发送至您先前提供的邮箱。 互联网安全研究组（ISRG）是一家 501(c)(3) 非营利公益组织。 我们的 EIN 是：46-3344200。</p>
+    <p class="pt-2"><strong>多多益善</strong></p>
+    <p>有些单位会有“员工捐多少，单位捐多少”的政策。 您可留意贵司是否有类似的政策，并让您的影响力加倍！</p>
+    <div class="pt-2">
+      {{< double_donation >}}
+    </div>
+  </div>

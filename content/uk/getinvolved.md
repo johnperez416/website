@@ -1,7 +1,6 @@
 ---
 title: Долучитися
 slug: getinvolved
-top_graphic: 5
 lastmod: 2019-11-04
 menu:
   main:
@@ -25,7 +24,7 @@ show_lastmod: 1
 
 ### Програмне забезпечення на сервері ЦС
 
-[Boulder](https://github.com/letsencrypt/boulder) - це реалізація Let's Encrypt Центром сертифікації. Вона заснована на [ACME](https://tools.ietf.org/html/rfc8555) протоколі і переважно написана у Go. Найкраще розпочати зі списку ['help wanted' issues](https://github.com/letsencrypt/boulder/labels/help%20wanted) та [contributors guide](https://github.com/letsencrypt/boulder/blob/master/CONTRIBUTING.md).
+[Boulder](https://github.com/letsencrypt/boulder) - це реалізація Let's Encrypt Центром сертифікації. Вона заснована на [ACME](https://tools.ietf.org/html/rfc8555) протоколі і переважно написана у Go. Найкраще розпочати зі списку ['help wanted' issues](https://github.com/letsencrypt/boulder/labels/help%20wanted) та [contributors guide](https://github.com/letsencrypt/boulder/blob/main/docs/CONTRIBUTING.md).
 
 ### letsencrypt.org
 

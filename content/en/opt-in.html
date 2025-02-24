@@ -1,0 +1,35 @@
+---
+title: Sign up for emails
+slug: opt-in
+date: 2025-01-21
+display_newsletter_embed: true
+---
+
+<div class="text-left">
+    <p>Sign up for emails from ISRG, the nonprofit behind Let's Encrypt. We’ll keep you informed about technical updates as well as other news about Let’s Encrypt and our sister projects, based on the preferences you choose.</p>
+
+    <p>By signing up for emails you agree to Let's Encrypt and ISRG handling your information as described in our <a href="https://letsencrypt.org/privacy/">privacy policy</a>.</p>
+</div>
+
+<script>
+// Receive refresh command from iframe
+window.addEventListener('message', function(event) {
+  // Check the origin of the message, to ensure it's from a trusted source
+  console.log("Message received from: " + event.origin, event)
+  if (event.origin !== 'https://outreach.abetterinternet.org') return;
+
+  if (event.data === 'refresh') {
+    window.location.reload();
+  }
+}, false);
+
+// Tell iframe to autofocus on the text field on load
+window.addEventListener('DOMContentLoaded', (event) => {
+    var iframe = document.querySelector('iframe');
+    iframe.addEventListener('load', function() {
+        iframe.contentWindow.postMessage('focusOnInput', 'https://outreach.abetterinternet.org');
+    });
+});
+
+
+</script>

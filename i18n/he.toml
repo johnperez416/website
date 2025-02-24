@@ -1,7 +1,5 @@
-# See https://github.com/nicksnyder/go-i18n for format documentation and some tools.
-
 [home_hero_title]
-other = "רשות אישורים ללא מטרות רווח המספקת אישורי TLS לכ־<span>260 מיליון</span> אתרים."
+other = "רשות אישורים ללא מטרות רווח המספקת אישורי TLS לכ־<a href='/stats/'>550 מיליון</a> אתרים."
 
 [home_hero_getting_started]
 other = "איך מתחילים"
@@ -13,16 +11,10 @@ other = "תרומה"
 other = "מתן חסות"
 
 [home_hero_annual_report]
-other = "לקריאת <a href='https://abetterinternet.org/documents/2021-ISRG-Annual-Report.pdf'>הדוח</a> לשנת 2021"
-
-[home_hero_desktop]
-other = "שולחן עבודה"
-
-[home_hero_mobile]
-other = "מכשיר נייד"
+other = "אפשר לקרוא את העבודה שעשינו ללא מטרות רווח השנה ב<a href='https://abetterinternet.org/annual-reports/'>דוח שנת 2024</a>."
 
 [home_major_sponsors]
-other = "נותני חסות ותורמים עיקריים"
+other = "נותני חסות ומממנים עיקריים"
 
 [home_from_our_blog]
 other = "מהבלוג שלנו"
@@ -31,7 +23,7 @@ other = "מהבלוג שלנו"
 other = "מידע נוסף"
 
 [subscribe_rss]
-other = "הרשמה <a href=\"{{ .Permalink }}\">דרך RSS</a>"
+other = 'הרשמה <a href="{{ .Permalink }}">דרך RSS</a>'
 
 [footer_support_us]
 other = "לתמיכה ברשת אינטרנט מאובטחת יותר ומכבדת פרטיות."
@@ -40,16 +32,13 @@ other = "לתמיכה ברשת אינטרנט מאובטחת יותר ומכבד
 other = "תרומה"
 
 [footer_mailing]
-other = "שלח את כל הדואר או השאלות אל:"
+other = "יש לשלוח הודעות או בקשות אל:"
 
 [footer_policies]
 other = """
 לצפייה ב<a href="/privacy/">מדיניות הפרטיות</a> שלנו.<br>
-לצפייה ב<a href="https://www.abetterinternet.org/trademarks/">מדיניות זכויות היוצרים</a> שלנו.
+לצפייה ב<a href="/trademarks/">מדיניות זכויות היוצרים</a> שלנו.
 """
-
-[linux_foundation_trademark]
-other = "Linux Foundation הוא סימן מסחר רשום לטובת The Linux Foundation. Linux הוא סימן מסחר רשום לטובת Linus Torvalds."
 
 [header_skip_nav]
 other = "דילוג על קישורי הניווט"
@@ -62,6 +51,9 @@ other = "הצגת כל התיעוד"
 
 [blog_feed]
 other = "הזנת הבלוג של Let's Encrypt"
+
+[diamond]
+other = "יהלום"
 
 [platinum]
 other = "פלטינה"
@@ -85,7 +77,7 @@ other = "מעבר לאנגלית"
 other = "לתשומת לבך: הגרסה האנגלית נערכה מאז שתורגמה"
 
 [not_yet_translated]
-other = "עמוד זה לא תורגם עדיין. ניתן לתרום למאמץ <a href=\"https://github.com/letsencrypt/website\">כאן</a>."
+other = 'עמוד זה לא תורגם עדיין. ניתן לתרום למאמץ <a href="https://github.com/letsencrypt/website">כאן</a>.'
 
 [english_is_canonical]
 other = "הגרסה האנגלית היא הסמכות העליונה"
@@ -120,11 +112,14 @@ other = "משתמשים יפניים"
 [graph_percent_https]
 other = "אחוז עמודים שנטענו עם HTTPS (ממוצע נע על פני 14 ימים)"
 
+[certificate_policy]
+other = "מדיניות אישורים"
+
 [certificate_transparency_name]
 other = "שם"
 
 [certificate_transparency_role_production]
-other = "הפעלה מלאה (Production)"
+other = "פעילות מלאה (Production)"
 
 [certificate_transparency_role_testing]
 other = "בדיקה (Testing)"
@@ -147,6 +142,9 @@ other = "תחילת החלון"
 [certificate_transparency_window_end]
 other = "סוף החלון"
 
+[certification_practices_statement]
+other = "Certification Practices Statement - הצהרת תרגולות ניהול אישורים"
+
 [overview]
 other = "סקירה"
 
@@ -168,8 +166,6 @@ other = "הבדלים מה־RFC של ACME"
 [onboarding_customers]
 other = "צירוף הלקוחות שלך עם Let's Encrypt ו־ACME"
 
-# Paypal texts from https://www.paypal.com/donate/buttons/unhosted
-
 [paypal_donate_alt]
 other = "תרומה עם כפתור PayPal"
 
@@ -180,7 +176,6 @@ other = "תרומה עם PayPal"
 other = "העמוד הזה לא נמצא, נא לבדוק שהכתובת נכונה."
 
 [amount_per_year]
-# Ex. $10.000/yr (USD)
 other = "${{ .nb }} לשנה (דולר ארה״ב)"
 
 [3y_commitment]
@@ -194,3 +189,12 @@ other = "100‏-999 עובדים"
 
 [1000_employees]
 other = "1000 עובדים ומעלה"
+
+[subscribe_to_newsletter_headline]
+other = "אפשר להירשם לעדכונים שלנו בדוא״ל בנוגע ל־Let's Encrypt ומיזמים נוספים של ISRG"
+
+[site_banner_text]
+other = "ISRG חוגגים 10 שנות סיוע בבניית אינטרנט טוב יותר ←"
+
+[footer_copyright]
+other = "קבוצת מחקר אבטחת האינטרנט"

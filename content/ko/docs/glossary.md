@@ -1,7 +1,6 @@
 ---
 title: 용어 사전
 slug: glossary
-top_graphic: 1
 date: 2018-12-30
 show_lastmod: 1
 ---
@@ -31,7 +30,7 @@ Note for translators:
 
 {{% def id="ACME-client" name="ACME Client" %}} ACME 서버와 통신하여 [인증서](#def-leaf)를 요청할 수 있는 프로그램입니다. {{% /def %}}
 
-{{% def id="ACME-server" name="ACME Server" %}} [인증서](#def-leaf)를 생성할 수 있는 ACME 호환 서버입니다. Let's Encrypt의 소프트웨어인 [Bolder](#def-boulder)는 ACME와 호환되며, [일부 차이점이 있습니다](https://github.com/letsencrypt/boulder/blob/master/docs/acme-divergences.md). {{% /def %}}
+{{% def id="ACME-server" name="ACME Server" %}} [인증서](#def-leaf)를 생성할 수 있는 ACME 호환 서버입니다. Let's Encrypt의 소프트웨어인 [Bolder](#def-boulder)는 ACME와 호환되며, [일부 차이점이 있습니다](https://github.com/letsencrypt/boulder/blob/main/docs/acme-divergences.md). {{% /def %}}
 
 {{% def id="boulder" name="Boulder" %}} [Let's Encrypt](#def-LE)에서 개발하고 사용하는 ACME를 구현하는 소프트웨어입니다. [GitHub](https://github.com/letsencrypt/boulder) {{% /def %}}
 
@@ -131,7 +130,7 @@ Note for translators:
 
 {{% def id="HPKP" name="HTTP Public Key Pinning" abbr="HPKP" %}} 웹 브라우저에 사이트의 [인증서 체인](#def-chain)이 향후 로드에 대해 특정 공용 키를 사용하도록 요구하는 보안 메커니즘입니다. Chrome은 CA의 타협으로부터 보호하기 위해 이 메커니즘을 도입했지만, 사이트 정전을 초래함에 따라 Chrome이 해당 메커니즘을 [사용 중단 및 제거](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/he9tr7p3rZ8)하게 되었습니다. [위키피디아](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) {{% /def %}}
 
-{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} 여러 개별 엔티티가 하위 도메인을 등록할 수 있는 인터넷 도메인을 나타내는 *공용 접미사* 목록입니다. 예를 들어, `com`과 `co.uk`는 TLD가 아니지만 `co.uk`는 공공 접미사입니다. 웹 브라우저에서는 다른 엔티티에 의해 운영될 가능성이 있는 사이트가 서로 웹 쿠키를 공유하지 못하도록 차단하기 위해 이 목록을 사용합니다. [Let's Encrypt](#def-LE) 또한 속도 제한 계산에 목록을 사용합니다: [/rate-limits](/rate-limits). https://publicsuffix.org/ {{% /def %}}
+{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} 여러 개별 엔티티가 하위 도메인을 등록할 수 있는 인터넷 도메인을 나타내는 *공용 접미사* 목록입니다. 예를 들어, `com`과 `co.uk`는 TLD가 아니지만 `co.uk`는 공공 접미사입니다. 웹 브라우저에서는 다른 엔티티에 의해 운영될 가능성이 있는 사이트가 서로 웹 쿠키를 공유하지 못하도록 차단하기 위해 이 목록을 사용합니다. [Let's Encrypt](#def-LE) 또한 속도 제한 계산에 목록을 사용합니다: [/docs/rate-limits](/docs/rate-limits). https://publicsuffix.org/ {{% /def %}}
 
 {{% def id="relying-party" name="Relying Party" %}} 인증서의 정보에 의존하는 사용자입니다. 예를 들어, HTTPS 웹 사이트를 방문하는 사람은 상대편입니다. {{% /def %}}
 

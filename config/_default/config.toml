@@ -3,7 +3,7 @@ baseURL = "https://letsencrypt.org/"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "term"]
 
 enableRobotsTXT = true
 
@@ -14,12 +14,10 @@ assetDir = "src"
 
 [params]
 
-# Default page top graphic if not set in page front matter. This is an integer representing the base filename.
-# See the JPEG files below /static/images.
-top_graphic = 5
+site_banner_enabled = false
 
 github_username = "letsencrypt"
-twitter_username = "letsencrypt"
+linkedin_url = "https://www.linkedin.com/company/lets-encrypt/"
 crowdfunding_url = "https://www.generosity.com/community-fundraising/make-a-more-secure-web-with-let-s-encrypt"
 
 # Date and time formatting, see https://gohugo.io/functions/format/
@@ -30,7 +28,7 @@ time_format_default = ":date_medium"
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
-show_fundraiser = true
+show_fundraiser = false
 
 # Be explicit about the output formats. We only want an RSS feed for the home page.
 [outputs]

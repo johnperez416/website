@@ -2,9 +2,7 @@
 title: FAQ
 linkTitle: Frequently Asked Questions (FAQ)
 slug: faq
-top_graphic: 1
-date: 2017-07-06
-lastmod: 2017-07-06
+lastmod: 2024-06-26
 menu:
   main:
     weight: 30
@@ -12,11 +10,10 @@ menu:
 show_lastmod: 1
 ---
 
-
 Diese FAQ ist in folgende Sektionen unterteilt:
 
-* [Allgemeine Fragen](#general)
-* [Technische Fragen](#technical)
+- [Allgemeine Fragen](#general)
+- [Technische Fragen](#technical)
 
 # <a id="general">Allgemeine Fragen</a>
 
@@ -32,7 +29,7 @@ Um mit Let's Encrypt zu beginnen, besuchen Sie bitte [Erste Schritte](/getting-s
 
 Wir erheben keine Gebühr für unsere Zertifikate. Let's Encrypt ist gemeinnützig, unsere Mission ist die Erstellung eines sicheren Webs, welches die Privatsphäre akzeptiert durch weite Verbreitung von HTTPS. Unsere Dienste sind frei und einfach zu benutzen, sodass jede Webseite HTTPS bereitstellen kann.
 
-Wir brauchen Unterstützung von grosszügigen Sponsoren, Stipendiaten und Einzelpersonen, um unsere Dienste frei rund um den Globus bereitzustellen. Wenn Sie interessiert sind, uns zu unterstützen, bitte machen Sie eine [Spende](/donate) oder [werden Sie Sponsor](/become-a-sponsor).
+Wir brauchen Unterstützung von grosszügigen Sponsoren, Stipendiaten und Einzelpersonen, um unsere Dienste frei rund um den Globus bereitzustellen. Wenn Sie uns unterstützen möchten, überlegen Sie bitte, ob Sie [spenden](/donate) oder [Sponsor](https://www.abetterinternet.org/sponsor) werden wollen.
 
 In einigen Fällen wird Integratoren (z.B. Hosting-Provider) eine geringe Gebühr für Verwaltungsaufwand berechnet.
 
@@ -45,11 +42,12 @@ Let's Encrypt läuft mit einem kleinen Team und hängt stark von Automatisierung
 
 Hier ist ein [Video, was wir mögen](https://www.youtube.com/watch?v=Xe1TZaElTAs) über die Leistung der grossen Community.
 
-## Eine Webseite, die Let's Encrypt benutzt, ist an Phishing/Malware/Scam/... beteiligt, was sollte ich tun?
+## Eine Website, die Let's Encrypt verwendet, betreibt Phishing/Malware/Scam/... Was soll ich tun?
 
-Wir empfehlen das Melden solcher Seiten bei Google Safe Browsing und dem Microsoft Smart Screen Programm, welche die Benutzer mehr schützen kann. Hier ist eine Meldeseite von Google:
+Wir empfehlen das Melden solcher Seiten bei Google Safe Browsing und dem Microsoft Smart Screen Programm, welche die Benutzer mehr schützen kann. Hier sind die Reporting-URLs:
 
-[https://safebrowsing.google.com/safebrowsing/report_badware/](https://safebrowsing.google.com/safebrowsing/report_badware/)
+- [https://safebrowsing.google.com/safebrowsing/report_badware/](https://safebrowsing.google.com/safebrowsing/report_badware/)
+- [https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest](https://www.microsoft.com/en-us/wdsi/support/report-unsafe-site-guest)
 
 Wenn Sie mehr über Regeln und Gründe lesen wollen, so können Sie das hier (in englisch):
 
@@ -70,11 +68,14 @@ Email-Verschlüsselung und Code-Signierung sind unterschiedliche Typen von Zerti
 ## Generiert oder speichert Let's Encrypt private Schlüssel von meinen Zertifikaten auf Let's Encrypt Servern?
 
 Nein. Niemals.
+
 Der private Schlüssel wird immer auf Ihrem eigenen Server generiert und verwaltet, nicht bei der Let's Encrypt Zertifikat Verwaltung.
 
 ## Was ist die Laufzeit der Let's Encrypt Zertifikate? Für wie lange sind diese gültig?
 
-Unsere Zertifikate sind 90 Tage gültig. Sie können [hier](/2015/11/09/why-90-days.html) lesen, warum das so ist.Da ist kein Weg das zu ändern, es gibt keine Ausnahme. Wir empfehlen die automatische Erneuerung Ihrer Zertifikate alle 60 Tage.
+Unsere Zertifikate sind 90 Tage gültig. Sie können [hier](/2015/11/09/why-90-days.html) darüber lesen warum.
+
+Es gibt keine Möglichkeit, das zu ändern, es gibt keine Ausnahmen. Wir empfehlen die automatische Erneuerung Ihrer Zertifikate alle 60 Tage.
 
 ## Wird Let's Encrypt Organisations-Validierung (OV) oder Erweiterte Validierung (EV) Zertifikate anbieten?
 
@@ -86,7 +87,7 @@ Ja, dieselben Zertifikate können unterschiedliche Namen mit Benutzung des Subje
 
 ## Kann Let's Encrypt Wildcard-Zertifikate ausstellen?
 
-Ja. Wildcard müssen über ACMEv2 mit DNS-01 Challenge ausgestellt werden. Schauen Sie [diese Nachricht](https://community.letsencrypt.org/t/acme-v2-production-environment-wildcards/55578) für mehr technische Details.
+Ja. Die Vergabe von Wildcards muss über ACMEv2 unter Verwendung der [DNS-01 Herausforderung](/docs/challenge-types/#dns-01-challenge) erfolgen. Schauen Sie [diese Nachricht](https://community.letsencrypt.org/t/acme-v2-production-environment-wildcards/55578) für mehr technische Details.
 
 ## Gibt es einen Let's Encrypt (ACME) Client für mein Betriebssystem?
 
@@ -96,10 +97,24 @@ Es ist eine grosse Anzahl von [ACME Clients](/docs/client-options) verfügbar. D
 
 Ja, aber nicht alle Clients unterstützen diese Funktion. [Certbot](https://certbot.eff.org/) tut das.
 
+## Ich habe ein Zertifikat beantragt und jetzt erhält meine Domain eine Menge Traffic! Warum ist das so?
+
+Das ist normal und wird vorausgesehen. Während des [-Zertifikatausstellungsverfahrens](/how-it-works)prüft Encrypt die Kontrolle Ihrer Domäne aus [mehreren Netzwerkperspektiven](/2020/02/19/multi-perspective-validation). Nach erfolgreicher Validierung wird Ihr Zertifikat in zahlreiche [Zertifikattransparenz (CT) Protokolle](/docs/ct-logs) eingereicht. Siehe [hier](https://certificate.transparency.dev/howctworks/#pki) für weitere Details, warum dies notwendig ist. Kurz nachdem das Zertifikat bei CT eingereicht wurde, können automatisierte CT-Crawling-Bots Ihre Domain entdecken, versuchen Sie darauf zuzugreifen und generieren Sie weiteren Traffic in Ihren Webserver-Logs.
+
 ## Welche IP-Adressen benutzt Let's Encrypt zur Validierung meines Webservers?
 
-Wir veröffentlichen keine Liste von IP-Adressen, die wir bei der Validierung benutzen, weil diese ändern sich zu jeder Zeit. In der Zukunft validieren wir möglichweise von verschiedenen IP-Adressen zur selben Zeit. Lesen Sie [diese Nachricht](https://community.letsencrypt.org/t/validating-challenges-from-multiple-network-vantage-points) für mehr Details.
+Wir veröffentlichen keine Liste von IP-Adressen, die wir bei der Validierung benutzen, weil diese ändern sich zu jeder Zeit. Beachten Sie, dass wir jetzt [von mehreren IP-Adressen](/2020/02/19/multi-perspective-validation.html) validieren.
 
-## Ich habe erfolgreich ein Zertifikat erneuert, aber die Validierung funktioniert jetzt nicht mehr - wie ist das möglich?
+## Ich habe erfolgreich ein Zertifikat erneuert, aber die Validierung ist nicht geschehen - wie ist das möglich?
 
 Wenn Sie den Austausch für eine Domain erfolgreich abgeschlossen haben, wird die resultierende Autorisierung zwischengespeichert, damit Ihr Konto später erneut verwendet werden kann. Die zwischengespeicherten Berechtigungen sind 30 Tage ab dem Zeitpunkt der Validierung gültig. Wenn das angeforderte Zertifikat alle erforderlichen Berechtigungen zwischengespeichert hat, wird die Validierung erst nach Ablauf der relevanten zwischengespeicherten Berechtigungen erneut durchgeführt.
+
+## Warum sollte mein Let's Encrypt (ACME) Client zu einer zufälligen Zeit laufen?
+
+Wir bitten die [ACME-Clients, routinemäßige Erneuerungen zu zufälligen Zeiten vorzunehmen](https://letsencrypt.org/docs/integration-guide/#when-to-renew), um Spitzen im Datenverkehr zu bestimmten Tageszeiten zu vermeiden, z. B. genau um Mitternacht UTC oder in der ersten Sekunde jeder Stunde oder Minute. Wenn der Dienst zu stark ausgelastet ist, werden die Clients aufgefordert, es [später noch einmal zu versuchen](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503). Daher kann eine zufällige Festlegung der Verlängerungszeiten dazu beitragen, unnötige Wiederholungen zu vermeiden.
+
+## Wo kann ich mehr über TLS/SSL und PKI im Allgemeinen erfahren?
+
+Der langjährige Sicherheitsforscher und Praktiker Ivan Ristić hat einen Konfigurationsleitfaden veröffentlicht, der nützliche Informationen darüber enthält, was Sie bei der <a href="https://www.feistyduck.com/library/bulletproof-tls-guide/online/" target="_blank" rel="noopener noreferer">Einrichtung Ihrer TLS-Konfiguration</a> beachten sollten.
+
+Für umfangreichere Hintergründe und mehr Details empfehlen wir <a href="https://www.feistyduck.com/books/bulletproof-tls-and-pki/" target="_blank" rel="noopener noreferer">Bulletproof TLS and PKI</a>, ebenfalls geschrieben von Ristić.

@@ -53,7 +53,7 @@ html[dir="rtl"] .site-title {
 .hero.tall {
     padding: 55px 0;
     text-align: center;
-    background: #E1DCD2 url(/images/3.jpg) no-repeat center center;
+    background: #E1DCD2 url(/images/hero.jpg) no-repeat center center;
     background-size: cover;
 
 
@@ -117,6 +117,7 @@ html[dir="rtl"] .site-title {
         font-weight: 300;
         padding: 6px 18px;
         border: 2px solid #2a7ae2;
+        color:#2a7ae2;
         border-radius: 8px;
         width: 175px;
 
@@ -126,11 +127,12 @@ html[dir="rtl"] .site-title {
             width: 110px;
         }
         &:visited {
-            border-color: #1756a9;
+            border-color: #2a7ae2;
         }
         &:hover {
             text-decoration: none;
             border-color: #000;
+            color: #000;
         }
     }
     a.accent {
@@ -152,7 +154,7 @@ html[dir="rtl"] .hero.slim div.container {
     padding-top:25px;
     padding-bottom: 18px;
     text-align: center;
-    background: #E1DCD2 url(/images/3.jpg) no-repeat center center;
+    background: #E1DCD2 url(/images/hero.jpg) no-repeat center center;
     background-size: cover;
 
     div.container {
@@ -198,6 +200,7 @@ html[dir="rtl"] .hero.slim div.container {
     img {
         @include media-query($on-palm) {
             max-height: 70px;
+            max-width: 180px;
             width: auto;
         }
     }
@@ -241,7 +244,7 @@ html[dir="rtl"] .hero.slim div.container {
     h2 {
         line-height: 1;
     }
-    
+
     .buttons {
         line-height: 48px;
         margin-top: 24px;
@@ -249,7 +252,7 @@ html[dir="rtl"] .hero.slim div.container {
         a {
             font-size: 24px;
         }
-        
+
     }
 }
 
@@ -276,6 +279,18 @@ html[dir="rtl"] .social-media-list {
     margin-left: 0;
 }
 
+.social-media-list a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.social-media-list a:hover {
+    text-decoration: none;
+}
+.social-media-list a:hover span {
+    text-decoration: underline;
+}
+
 .social-media-list i {
     color: $grey-color;
     vertical-align: middle;
@@ -284,43 +299,33 @@ html[dir="rtl"] .social-media-list {
 .footer-col-wrapper {
     font-size: 15px;
     color: $text-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-unit;
+
+    @include media-query($on-palm) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer-col {
-    float: left;
     margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
 }
 
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(65% - (#{$spacing-unit} / 2));
-    width:         calc(65% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
+.footer-newsletter-col {
+    h6 {
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        margin-bottom: 0;
     }
 }
 
 @include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+    .footer-newsletter-col {
+        margin-top: 40px;
     }
 }
-
-
 
 /**
  * Page content
@@ -357,6 +362,10 @@ html[dir="rtl"] .social-media-list {
     > li {
         margin-bottom: $spacing-unit;
     }
+
+    .post-excerpt {
+        margin-top: 5px;
+    }
 }
 
 .post-meta {
@@ -384,6 +393,9 @@ html[dir="rtl"] .social-media-list {
 	vertical-align: -10%;
 }
 
+summary {
+    cursor: pointer;
+}
 
 
 /**
@@ -458,4 +470,42 @@ html[dir="rtl"] .social-media-list {
         border-radius: 0;
         padding: 10px 10px;
     }
+}
+
+
+.sponsor-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    & > a {
+        display: block;
+        flex-basis: 25%;
+        box-sizing: border-box;
+        padding: 20px;
+
+        @include media-query($on-palm) {
+            flex-basis: 33.3%;
+        }
+        @include media-query($smallest) {
+            flex-basis: 50%;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            padding: 0;
+
+        }
+    }
+}
+
+.boxed {
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
 }

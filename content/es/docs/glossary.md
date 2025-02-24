@@ -1,7 +1,6 @@
 ---
 title: Glosario
 slug: glossary
-top_graphic: 1
 date: 2018-12-30
 show_lastmod: 1
 ---
@@ -31,7 +30,7 @@ Note for translators:
 
 {{% def id="ACME-client" name="ACME Client" %}} Un programa capaz de comunicarse con un servidor ACME para solicitar un [certificate](#def-leaf). {{% /def %}}
 
-{{% def id="ACME-server" name="ACME Server" %}} Un servidor compatible con ACME que puede generar [certificates](#def-leaf). El software , [Boulder](#def-boulder), es compatible con ACME, [con algunas diferencias](https://github.com/letsencrypt/boulder/blob/master/docs/acme-divergences.md). {{% /def %}}
+{{% def id="ACME-server" name="ACME Server" %}} Un servidor compatible con ACME que puede generar [certificates](#def-leaf). El software , [Boulder](#def-boulder), es compatible con ACME, [con algunas diferencias](https://github.com/letsencrypt/boulder/blob/main/docs/acme-divergences.md). {{% /def %}}
 
 {{% def id="boulder" name="Boulder" %}} El software que implementa ACME, desarrollado y utilizado por [Let's Encrypt](#def-LE). [GitHub](https://github.com/letsencrypt/boulder) {{% /def %}}
 
@@ -131,7 +130,7 @@ Note for translators:
 
 {{% def id="HPKP" name="HTTP Public Key Pinning" abbr="HPKP" %}} Un mecanismo de seguridad que le pide a un navegador que requiera que la [cadena de certificados](#def-chain) de un sitio use ciertas claves públicas en futuras cargas. Chrome introdujo este mecanismo para proteger contra compromisos de CA, pero causó interrupciones en el sitio, lo que llevó a Chrome a [desaprobarlo y eliminarlo](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/he9tr7p3rZ8). [Wikipedia](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) {{% /def %}}
 
-{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} Una lista de *Sufijos públicos* mantenida por Mozilla, que indica qué dominios de Internet están disponibles para diferentes entidades para registrar subdominios. Por ejemplo, la lista indica que tanto `com` como `co.uk` son sufijos públicos a pesar de que `co.uk` no es un TLD. Los navegadores web utilizan la lista, entre otras cosas, para evitar que los sitios que probablemente sean operados por diferentes entidades compartan cookies web entre sí. [Let's Encrypt](#def-LE) también usa la lista para los cálculos de límite de solicitudes: [/rate-limits](/rate-limits). https://publicsuffix.org/ {{% /def %}}
+{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} Una lista de *Sufijos públicos* mantenida por Mozilla, que indica qué dominios de Internet están disponibles para diferentes entidades para registrar subdominios. Por ejemplo, la lista indica que tanto `com` como `co.uk` son sufijos públicos a pesar de que `co.uk` no es un TLD. Los navegadores web utilizan la lista, entre otras cosas, para evitar que los sitios que probablemente sean operados por diferentes entidades compartan cookies web entre sí. [Let's Encrypt](#def-LE) también usa la lista para los cálculos de límite de solicitudes: [/docs/rate-limits](/docs/rate-limits). https://publicsuffix.org/ {{% /def %}}
 
 {{% def id="relying-party" name="Relying Party" %}} La persona que depende de la información en un certificado. Por ejemplo, alguien que visita un sitio web HTTPS es una parte confiable. {{% /def %}}
 

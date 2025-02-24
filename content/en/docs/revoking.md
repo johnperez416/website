@@ -1,9 +1,8 @@
 ---
-title: Revoking certificates
+title: Revoking Certificates
 slug: revoking
-top_graphic: 1
 date: 2017-06-08
-lastmod: 2021-10-15
+lastmod: 2025-02-14
 show_lastmod: 1
 ---
 
@@ -12,9 +11,24 @@ When a certificate is no longer safe to use, you should revoke it. This can happ
 
 When you revoke a Let's Encrypt certificate, Let's Encrypt will publish that revocation information through the [Online Certificate Status Protocol (OCSP)](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol), and some browsers will check OCSP to see whether they should trust a certificate. Note that OCSP [has some fundamental problems](https://www.imperialviolet.org/2011/03/18/revocation.html), so not all browsers will do this check. Still, revoking certificates that correspond to compromised private keys is an important practice, and is required by Let's Encrypt's [Subscriber Agreement](/repository).
 
-To revoke a certificate with Let's Encrypt, you will use the [ACME API](https://github.com/letsencrypt/boulder/blob/master/docs/acme-divergences.md), most likely through an ACME client like [Certbot](https://certbot.eff.org/). You will need to prove to Let’s Encrypt that you are authorized to revoke the certificate. There are three ways to do this: from the account that issued the certificate, using a different authorized account, or using the certificate private key.
+To revoke a certificate with Let's Encrypt, you will use the [ACME API](https://github.com/letsencrypt/boulder/blob/main/docs/acme-divergences.md), most likely through an ACME client like [Certbot](https://certbot.eff.org/). You will need to prove to Let’s Encrypt that you are authorized to revoke the certificate. There are three ways to do this: from the account that issued the certificate, using a different authorized account, or using the certificate private key.
 
-You should specify a [reason to revoke](https://en.wikipedia.org/wiki/Certificate_revocation_list#Reasons_for_revocation) via your ACME client; for example, [in Certbot](https://certbot.eff.org/docs/using.html#revoking-certificates). For reasons other than `keyCompromise`, you may use any of the three methods. For `keyCompromise`, you will need to use the certificate private key.
+# Specifying a reason code
+
+When revoking a certificate, Let's Encrypt subscribers should select a reason code as follows:
+
+* No reason provided or `unspecified` (RFC 5280 CRLReason #0)
+  - When the reason codes below do not apply to the revocation request, the subscriber must not provide a reason code other than "unspecified".
+* `keyCompromise` (RFC 5280 CRLReason #1)
+  - The certificate subscriber must choose the "keyCompromise" revocation reason when they have reason to believe that the private key of their certificate has been compromised, e.g. an unauthorized person has had access to the private key of their certificate.
+  - If the revocation request is signed using the Certificate private key, rather than a Subscriber account private key, Let's Encrypt may ignore the revocation reason in the request and set the reason to "keyCompromise".
+* `superseded` (RFC 5280 CRLReason #4)
+  - The certificate subscriber should choose the "superseded" revocation reason when they request a new certificate to replace their existing certificate.
+* `cessationOfOperation` (RFC 5280 CRLReason #5)
+  - The certificate subscriber should choose the "cessationOfOperation" revocation reason when they no longer own all of the domain names in the certificate or when they will no longer be using the certificate because they are discontinuing their website.
+  - If the revocation request is from a Subscriber account which did not order the certificate in question, but has demonstrated control over all identifiers in the certificate, Let's Encrypt may ignore the revocation reason in the request and set the reason to "cessationOfOperation".
+
+Revocation requests that specify any reason code other than those detailed above will be rejected.
 
 # From the account that issued the certificate
 
@@ -36,7 +50,7 @@ If you want to avoid issuing a certificate at all, you can include a non-existen
 certbot certonly --manual --preferred-challenges=dns -d ${YOUR_DOMAIN} -d nonexistent.${YOUR_DOMAIN}
 ```
 
-And follow the instructions. If you'd prefer to validate using HTTP rather than DNS, replace the `--preferred-challenges` flag with `--preferred-challenges=http`.
+And follow the instructions, skipping the validation step for `nonexistent.${YOUR_DOMAIN}`. If you'd prefer to validate using HTTP rather than DNS, replace the `--preferred-challenges` flag with `--preferred-challenges=http`. Note that in many cases, the DNS version of these steps will not work if you replace `--manual` with a certbot plugin to fulfill DNS-01 challenges automatically, since certbot will happily place a TXT record at `_acme-challenge.nonexistent.${YOUR_DOMAIN}` if it has the ability to do so.
 
 Once you've validated control of all the domain names in the certificate you want to revoke, you can download the certificate from [crt.sh](https://crt.sh/), then proceed to revoke the certificate as if you had issued it:
 

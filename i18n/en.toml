@@ -1,7 +1,7 @@
 # See https://github.com/nicksnyder/go-i18n for format documentation and some tools.
 
 [home_hero_title]
-other = "A nonprofit Certificate Authority providing TLS certificates to <span>260 million</span> websites."
+other = "A nonprofit Certificate Authority providing TLS certificates to <a href='/stats/'>550 million</a> websites."
 
 [home_hero_getting_started]
 other = "Get Started"
@@ -13,7 +13,7 @@ other = "Donate"
 other = "Sponsor"
 
 [home_hero_annual_report]
-other = "Read our <a href='https://abetterinternet.org/documents/2021-ISRG-Annual-Report.pdf'>2021 Annual Report</a>"
+other = "Read all about our nonprofit work this year in our  <a href='https://abetterinternet.org/annual-reports/'>2024 Annual Report</a>."
 
 [home_major_sponsors]
 other = "Major Sponsors and Funders"
@@ -42,9 +42,6 @@ View our <a href="/privacy/">privacy policy</a>.<br>
 View our <a href="https://www.abetterinternet.org/trademarks">trademark policy</a>.
 """
 
-[linux_foundation_trademark]
-other = "Linux Foundation is a registered trademark of The Linux Foundation. Linux is a registered trademark of Linus Torvalds."
-
 [header_skip_nav]
 other = "Skip navigation links"
 
@@ -56,6 +53,9 @@ other = "See all Documentation"
 
 [blog_feed]
 other = "Let's Encrypt Blog Feed"
+
+[diamond]
+other = "Diamond"
 
 [platinum]
 other = "Platinum"
@@ -194,3 +194,12 @@ other = "100-999 employees"
 
 [1000_employees]
 other = "1000+ employees"
+
+[subscribe_to_newsletter_headline]
+other = "Subscribe for email updates about Let's Encrypt and other ISRG projects"
+
+[site_banner_text]
+other = "ISRG celebrates 10 years of helping build a brighter Internet →"
+
+[footer_copyright]
+other = "Internet Security Research Group"

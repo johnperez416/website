@@ -1,8 +1,7 @@
 ---
 title: Клієнтські реалізації ACME
 slug: client-options
-top_graphic: 1
-lastmod: 2020-12-18
+lastmod: 2025-01-22
 ---
 
 {{< clientslastmod >}}
@@ -21,11 +20,11 @@ Let's Encrypt використовує протокол ACME для підтве
 
 # Інші клієнтські варіанти
 
-Всі наступні клієнти підтримують API ACMEv2 ([RFC 8555](https://tools.ietf.org/html/rfc8555)). Найближчим часом ми повністю [відмовимося від підтримки ACMEv1](https://community.letsencrypt.org/t/end-of-life-plan-for-acmev1/88430/). Якщо ви вже використовуєте один з перерахованих нижче клієнтів, обов'язково оновіть його до останньої версії. Якщо клієнт, який ви використовуєте, відсутній в списку нижче, можливо, він не підтримує ACMEv2, в цьому випадку ми рекомендуємо зв'язатися з супутнім проєктом або перейти на інший клієнт.
+Всі наступні клієнти підтримують API ACMEv2 ([RFC 8555](https://tools.ietf.org/html/rfc8555)). У червні 2021 року ми [припинили підтримку ACMEv1](https://community.letsencrypt.org/t/end-of-life-plan-for-acmev1/88430/27). Якщо ви вже використовуєте один з перерахованих нижче клієнтів, обов'язково оновіть його до останньої версії. Якщо клієнт, який ви використовуєте, відсутній в списку нижче, можливо, він не підтримує ACMEv2, в цьому випадку ми рекомендуємо зв'язатися з супутнім проєктом або перейти на інший клієнт.
 
 {{< clients libraries="Libraries" projects="Проєкти, що інтегруються з Let's Encrypt" >}}
 
-Модуль Python [acme](https://github.com/certbot/certbot/tree/master/acme) є частиною Certbot, але також використовується низкою інших клієнтів та доступний як окремий пакет через [PyPI](https://pypi.python.org/pypi/acme), [Debian](https://packages.debian.org/search?keywords=python-acme), [Ubuntu](https://launchpad.net/ubuntu/+source/python-acme), [Fedora](https://bodhi.fedoraproject.org/updates/?packages=python-acme), а також інші дистрибутиви.
+Модуль Python [acme](https://github.com/certbot/certbot/tree/main/acme) є частиною Certbot, але також використовується низкою інших клієнтів та доступний як окремий пакет через [PyPI](https://pypi.python.org/pypi/acme), [Debian](https://packages.debian.org/search?keywords=python-acme), [Ubuntu](https://launchpad.net/ubuntu/+source/python-acme), [Fedora](https://bodhi.fedoraproject.org/updates/?packages=python-acme), а також інші дистрибутиви.
 
 {{< /clients >}}
 
@@ -35,7 +34,8 @@ Let's Encrypt використовує протокол ACME для підтве
 
 Перед відправкою запиту на виправлення, будь ласка, переконайтеся, що:
 
-1. Клієнт дотримується [політики торгової марки Let's Encrypt](/trademarks).
+1. Клієнт дотримується [політики торгової марки Let's Encrypt](https://www.abetterinternet.org/trademarks).
 1. Клієнт не є браузерним та підтримує автоматичне оновлення.
+1. Клієнт виконує [рутинне оновлення у випадковий час](/docs/integration-guide#when-to-renew) або заохочує таку конфігурацію.
 1. Ваш коміт додає вашого клієнта в **кінець** відповідні розділи (Не забудьте про "acme_v2", якщо це доречно!).
 1. Ваш коміт оновлює мітку дати `lastmod` у верхній частині `clients.json`.

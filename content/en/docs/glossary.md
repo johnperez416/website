@@ -1,8 +1,7 @@
 ---
 title: Glossary
 slug: glossary
-top_graphic: 1
-date: 2018-12-30
+date: 2024-07-16
 show_lastmod: 1
 ---
 
@@ -31,7 +30,7 @@ Note for translators:
 
 {{% def id="ACME-client" name="ACME Client" %}} A program capable of communicating with an ACME server to ask for a [certificate](#def-leaf). {{% /def %}}
 
-{{% def id="ACME-server" name="ACME Server" %}} An ACME-compatible server that can generate [certificates](#def-leaf). Let's Encrypt's software, [Boulder](#def-boulder), is ACME-compatible, [with some divergences](https://github.com/letsencrypt/boulder/blob/master/docs/acme-divergences.md). {{% /def %}}
+{{% def id="ACME-server" name="ACME Server" %}} An ACME-compatible server that can generate [certificates](#def-leaf). Let's Encrypt's software, [Boulder](#def-boulder), is ACME-compatible, [with some divergences](https://github.com/letsencrypt/boulder/blob/main/docs/acme-divergences.md). {{% /def %}}
 
 {{% def id="boulder" name="Boulder" %}} The software implementing ACME, developed and used by [Let's Encrypt](#def-LE). [GitHub](https://github.com/letsencrypt/boulder) {{% /def %}}
 
@@ -53,9 +52,9 @@ Note for translators:
 
 {{% def id="chain" name="Certificate chain" %}} A list of [intermediate certificates](#def-intermediate) that help a [user agent](#def-user-agent) determine that it can trust an end-entity or [leaf certificate](#def-leaf), by connecting it to a [root certificate](#def-root) in its [certificate store](#def-store). Note: the chain is not always unique, and when a website presents a certificate chain leading to one root, the user agent may decide to use another chain to validate the certificate. [Wikipedia](https://en.wikipedia.org/wiki/Public_key_certificate) {{% /def %}}
 
-{{% def id="CP" name="Certificate Policy" abbr="CP" %}} A named set of rules that indicates the applicability of a certificate to a particular community and/or class of applications with common security requirements. Specific details of issuance are outlined in a [CPS](#def-CPS). [ISRG Certificate Policy](/repository#isrg-certificate-policy) - [RFC 3647](https://tools.ietf.org/html/rfc3647) - [Wikipedia](https://en.wikipedia.org/wiki/Certificate_policy) {{% /def %}}
+{{% def id="CP" name="Certificate Policy" abbr="CP" %}} A named set of rules that indicates the applicability of a certificate to a particular community and/or class of applications with common security requirements. Specific details of issuance are outlined in a [CPS](#def-CPS). CP and CPS documents may be combined into a single document. [ISRG Combined CP/CPS](/repository#isrg-certificate-policy) - [RFC 3647](https://tools.ietf.org/html/rfc3647) - [Wikipedia](https://en.wikipedia.org/wiki/Certificate_policy) {{% /def %}}
 
-{{% def id="CPS" name="Certification Practice Statement" abbr="CPS" %}} A statement of the practices that a certification authority employs in issuing, managing, revoking, and renewing or re-keying certificates. [ISRG Certification Practice Statement](/repository#isrg-certification-practice-statement) - [RFC 3647 section 3.4](https://tools.ietf.org/html/rfc3647#section-3.4) [Wikipedia](https://en.wikipedia.org/wiki/Certification_Practice_Statement) {{% /def %}}
+{{% def id="CPS" name="Certification Practice Statement" abbr="CPS" %}} A statement of the practices that a certification authority employs in issuing, managing, revoking, and renewing or re-keying certificates. A CPS must be compliant with its associated [Certificate Policy](#def-CP). CP and CPS documents may be combined into a single document. [ISRG Combined CP/CPS](/repository#isrg-certificate-policy) - [RFC 3647 section 3.4](https://tools.ietf.org/html/rfc3647#section-3.4) [Wikipedia](https://en.wikipedia.org/wiki/Certification_Practice_Statement) {{% /def %}}
 
 {{% def id="critical" name="Critical extension" %}} A certificate may contain [extensions](#def-extension) marked "critical." This means that software must reject that certificate unless the software understands how to process that extension. This makes it possible to introduce new extensions that are important for security without creating risks for older software. {{% /def %}}
 
@@ -129,9 +128,11 @@ Note for translators:
 
 {{% def id="precertificate" name="Precertificate" %}} Precertificates are a part of [Certificate Transparency](#def-CT). A precertificate is a copy of the [certificate](#def-leaf) that a CA intends to issue, with a [critical](#def-critical) poison extension added to prevent the precertificate from being accepted by software in the wild. A CA submits a precertificate to [CT logs](#def-CT-log) in exchange for [SCTs](#def-SCT). Since a precertificate is not identical to its corresponding certificate, Certificate Transparency logs may end up containing both. [RFC 6962 Section 3.1]( https://tools.ietf.org/html/rfc6962#section-3.1) {{% /def %}}
 
+{{% def id="profile" name="Profile" %}} A Profile is a collection of properties which affect both the validation of and final contents of a certificate. See the [profiles documentation](/docs/profiles) for descriptions of each profile, what they affect, and how to select them. {{% /def %}}
+
 {{% def id="HPKP" name="HTTP Public Key Pinning" abbr="HPKP" %}} A security mechanism that asks a browser to require that a site's [certificate chain](#def-chain) use certain public keys on future loads. Chrome introduced this mechanism to protect against CA compromises, but it caused site outages, leading Chrome to [deprecate and remove it](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/he9tr7p3rZ8). [Wikipedia](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) {{% /def %}}
 
-{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} A list of *Public Suffixes* maintained by Mozilla, indicating which Internet domains are available for many separate entities to register subdomains. For instance, the list indicates that both `com` and `co.uk` are Public Suffixes even though `co.uk` is not a TLD. Web browsers use the list, among other things, for preventing sites that are likely operated by different entities from sharing web cookies with one another. [Let's Encrypt](#def-LE) also uses the list for rate-limit calculations: [/rate-limits](/rate-limits). https://publicsuffix.org/ {{% /def %}}
+{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} A list of *Public Suffixes* maintained by Mozilla, indicating which Internet domains are available for many separate entities to register subdomains. For instance, the list indicates that both `com` and `co.uk` are Public Suffixes even though `co.uk` is not a TLD. Web browsers use the list, among other things, for preventing sites that are likely operated by different entities from sharing web cookies with one another. [Let's Encrypt](#def-LE) also uses the list for rate-limit calculations: [/docs/rate-limits](/docs/rate-limits). https://publicsuffix.org/ {{% /def %}}
 
 {{% def id="relying-party" name="Relying Party" %}} The person relying on information in a certificate. For instance, someone who visits an HTTPS web site is a Relying Party. {{% /def %}}
 
@@ -165,7 +166,7 @@ Note for translators:
 
 {{% def id="UCC" name="Unified Communications Certificate" abbr="UCC" %}} A description of a certificate containing multiple [Subject Alternative Names (SANs)](#def-SAN). {{% /def %}}
 
-{{% def id="web-browser" name="Web Browser" %}} A [user agent](#def-user-agent) used to display web pages. Examples: *Mozilla Firefox*, *Google Chrome* or *Internet Explorer*. [Wikipedia](https://en.wikipedia.org/wiki/Web_browser) {{% /def %}}
+{{% def id="web-browser" name="Web Browser" %}} A [user agent](#def-user-agent) used to display web pages. Examples: *Mozilla Firefox*, *Google Chrome* or *Safari*. [Wikipedia](https://en.wikipedia.org/wiki/Web_browser) {{% /def %}}
 
 {{% def id="user-agent" name="User Agent" %}} Software capable of communicating with a [web server](#def-web-server). Example: a [web browser](#def-web-browser) or [cURL](https://en.wikipedia.org/wiki/CURL).{{% /def %}}
 

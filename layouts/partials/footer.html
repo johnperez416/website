@@ -1,3 +1,12 @@
+{{ if and (ne .Section "documents") (.Page.Params.display_newsletter_embed) }}
+<div class="wrapper">
+<div class="newsletter-form-wrapper">
+  {{ partial "newsletter-form" . }}
+</div>
+</div>
+{{ end }}
+
+
 {{ if and (ne .Section "docs") (ne .Section "documents") (not .Params.no_donate_footer) }}
 <div class="donate-footer">
   <div class="wrapper text-center">
@@ -9,39 +18,18 @@
 </div>
 {{ end }}
 
+
+
 {{ if ne .Section "documents" }}
 <footer class="site-footer">
 
   <div class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="social-media-list">
-          {{ with .Site.Params.github_username }}
-          <li>
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <a href="https://github.com/{{ . }}">
-              <span class="username">GitHub</span>
-            </a>
-          </li>
-          {{ end }}
-
-          {{ with .Site.Params.twitter_username }}
-          <li>
-            <i class="fab fa-twitter" aria-hidden="true"></i>
-            <a href="https://twitter.com/{{ . }}">
-              <span class="username">Twitter</span>
-            </a>
-          </li>
-         {{ end }}
-        </ul>
-        {{ i18n "footer_policies" | safeHTML }}
-      </div>
-
       <div class="footer-col  footer-col-2">
         <p>{{ .Site.Params.description | safeHTML }}</p>
         <p>
           <span itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="streetAddress">548 Market St, PMB 57274</span>,
+            <span itemprop="streetAddress">548 Market St, PMB 77519</span>,
             <span itemprop="addressLocality">San Francisco</span>,
             <span itemprop="addressRegion">CA</span>
             <span itemprop="postalCode">94104-5401</span>,
@@ -58,10 +46,37 @@
             <span itemprop="addressCountry">USA</span>
           </span>
         </p>
-        <div>
-          <a href="https://collabprojects.linuxfoundation.org/" target="_blank"><img src="/images/linux-foundation.png" alt="Linux Foundation Collaborative Projects" /></a>
+        <ul class="social-media-list">
+          {{ with .Site.Params.github_username }}
+          <li>
+            <a href="https://github.com/{{ . }}">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <span class="username">GitHub</span>
+            </a>
+          </li>
+          {{ end }}
+
+          {{ with .Site.Params.linkedin_url }}
+          <li>
+            <a href="{{ . }}">
+              <i class="fab fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span class="username">LinkedIn</span>
+            </a>
+          </li>
+         {{ end }}
+        </ul>
+        {{ i18n "footer_policies" | safeHTML }}
+      </div>
+
+      <div class="footer-col footer-newsletter-col  footer-col-3">
+        {{ if and (not .Page.Params.should_display_prominent_newsletter_form) (not .Page.Params.display_newsletter_embed) }}
+          <h6>{{ i18n "subscribe_to_newsletter_headline" }}</h6>
+          {{ partial "newsletter-form" . }}
+        {{ end }}
+
+        <div class="footer-copyright">
+          <a href="https://abetterinternet.org">&copy; {{ dateFormat "2006" now }}  {{ i18n "footer_copyright" }}</a>
         </div>
-        {{ i18n "linux_foundation_trademark" }}
       </div>
     </div>
 

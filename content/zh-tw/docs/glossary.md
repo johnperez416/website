@@ -1,7 +1,6 @@
 ---
 title: 術語表
 slug: glossary
-top_graphic: 1
 date: 2018-12-30
 show_lastmod: 1
 ---
@@ -31,7 +30,7 @@ Note for translators:
 
 {{% def id="ACME-client" name="ACME Client" %}} ACME 客戶端。能 ACME 伺服器溝通，以請求[憑證](#def-leaf)的軟體。{{% /def %}}
 
-{{% def id="ACME-server" name="ACME Server" %}} ACME 伺服器。相容 ACME 協定的伺服器。Let's Encrypt 的軟體 [Boulder](#def-boulder) 相容 ACME 協定，但是還[是有一些差異](https://github.com/letsencrypt/boulder/blob/master/docs/acme-divergences.md)。 {{% /def %}}
+{{% def id="ACME-server" name="ACME Server" %}} ACME 伺服器。相容 ACME 協定的伺服器。Let's Encrypt 的軟體 [Boulder](#def-boulder) 相容 ACME 協定，但是還[是有一些差異](https://github.com/letsencrypt/boulder/blob/main/docs/acme-divergences.md)。 {{% /def %}}
 
 
 {{% def id="boulder" name="Boulder" %}} 由 [Let's Encrypt](#def-LE) 開發和使用，以實作 ACME 協議的軟體。[GitHub](https://github.com/letsencrypt/boulder) {{% /def %}}
@@ -132,7 +131,7 @@ Note for translators:
 {{% def id="HPKP" name="HTTP Public Key Pinning" abbr="HPKP" %}} HTTP 公鑰固定。要求瀏覽器在載入網頁時，使用特定公鑰來驗證網站[憑證鏈](#def-chain)的安全機制。Chrome 引入這個機制來應對 CA 被入侵時的狀況，但它會導致網站無法被訪問，因此後來 Chrome [移除了這項機制](https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/he9tr7p3rZ8)。[維基百科](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) {{% /def %}}
 
 
-{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} 公共後綴列表。由 Mozilla 所維護的列表，列表中記錄可供註冊的網域名稱。例如：`com` 和 `co.uk` 都屬於公共後綴網域名稱，雖然 `co.uk` 不屬於[頂級域名](#def-TLD)。網頁瀏覽器使用這個列表和其他的方法，以避免不同的網站共享 cookies。[Let's Encrypt](#def-LE) 也使用了這個列表來計算是否達到速率限制：[/rate-limits](/rate-limits)。 https://publicsuffix.org/ {{% /def %}}
+{{% def id="PSL" name="Public Suffix List" abbr="PSL" %}} 公共後綴列表。由 Mozilla 所維護的列表，列表中記錄可供註冊的網域名稱。例如：`com` 和 `co.uk` 都屬於公共後綴網域名稱，雖然 `co.uk` 不屬於[頂級域名](#def-TLD)。網頁瀏覽器使用這個列表和其他的方法，以避免不同的網站共享 cookies。[Let's Encrypt](#def-LE) 也使用了這個列表來計算是否達到速率限制：[/docs/rate-limits](/docs/rate-limits)。 https://publicsuffix.org/ {{% /def %}}
 
 {{% def id="relying-party" name="Relying Party" %}} 信任方。依賴憑證資訊的人。例如：訪問 HTTPS 網站的人就是信任方。{{% /def %}}
 

@@ -1,28 +1,20 @@
-# See https://github.com/nicksnyder/go-i18n for format documentation and some tools.
-
 [home_hero_title]
-other = "为1.8亿个网站提供TLS证书的非盈利性证书颁发机构。"
+other = "为 <a href='/stats/'>5.5 亿</a>网站提供 TLS 证书的非营利证书颁发机构"
 
 [home_hero_getting_started]
 other = "快速入门"
 
 [home_hero_donate]
-other = "捐赠"
+other = "捐款"
 
 [home_hero_sponsor]
 other = "成为赞助商"
 
 [home_hero_annual_report]
-other = "<a href='https://abetterinternet.org/documents/2021-ISRG-Annual-Report.pdf'>阅读我们的2021年度报告</a>"
-
-[home_hero_desktop]
-other = "电脑版"
-
-[home_hero_mobile]
-other = "手机版"
+other = "我们这一年来的非营利工作详情可在 <a href='https://abetterinternet.org/annual-reports/'>2024 年度报告</a>中查阅。"
 
 [home_major_sponsors]
-other = "主要赞助商和捐赠者"
+other = "核心赞助商"
 
 [home_from_our_blog]
 other = "博客文章"
@@ -31,31 +23,27 @@ other = "博客文章"
 other = "阅读全文"
 
 [subscribe_rss]
-other = "<a href=\"{{ .Permalink }}\">RSS 订阅</a>"
+other = '<a href="{{ .Permalink }}">RSS 订阅</a>'
 
 [footer_support_us]
 other = "支持更安全、更尊重隐私的互联网。"
 
 [footer_donate]
-other = "捐赠"
+other = "捐款"
 
 [footer_mailing]
-other = "将所有信件和问题发送至："
+other = "邮件咨询可发送至："
 
 [footer_policies]
 other = """
-查看我们的<a href="/zh-cn/privacy/">隐私政策</a><br />
-查看我们的<a href="https://www.abetterinternet.org/trademarks/">商标政策</a>
-"""
-
-[linux_foundation_trademark]
-other = "“Linux Foundation”是 Linux 基金会的注册商标。“Linux”是 Linus Torvalds 的注册商标。"
+阅读我们的<a href="/zh-cn/privacy/">隐私政策</a>。<br>
+阅读我们的<a href="https://www.abetterinternet.org/trademarks">商标政策</a>。"""
 
 [header_skip_nav]
 other = "跳过导航链接"
 
 [last_updated]
-other = "最后更新："
+other = "最近更新："
 
 [see_all_doc]
 other = "所有文档"
@@ -63,17 +51,20 @@ other = "所有文档"
 [blog_feed]
 other = "Let's Encrypt 博客订阅源"
 
+[diamond]
+other = "钻石级"
+
 [platinum]
-other = "铂金"
+other = "白金级"
 
 [gold]
-other = "金"
+other = "黄金级"
 
 [gold_basic]
-other = "金（基础）"
+other = "普通黄金级"
 
 [silver]
-other = "银"
+other = "白银级"
 
 [languages]
 other = "切换语言"
@@ -85,7 +76,7 @@ other = "阅读英文页面"
 other = "注意：本页面有较新的英文版本。"
 
 [not_yet_translated]
-other = "此页面尚未翻译。要贡献翻译，请<a href=\"https://github.com/letsencrypt/website\">点击此处</a>。"
+other = '此页面尚未翻译。 要贡献翻译，请<a href="https://github.com/letsencrypt/website">点击此处</a>。'
 
 [english_is_canonical]
 other = "此页内容请以英文页面为准"
@@ -120,6 +111,9 @@ other = "日本用户"
 [graph_percent_https]
 other = "通过 HTTPS 加载的页面百分比（14日移动平均）"
 
+[certificate_policy]
+other = "证书策略"
+
 [certificate_transparency_name]
 other = "名称"
 
@@ -134,6 +128,21 @@ other = "链接"
 
 [certificate_transparency_public_key]
 other = "公钥"
+
+[certificate_transparency_log_id]
+other = "日志 ID"
+
+[certificate_transparency_state]
+other = "状态"
+
+[certificate_transparency_window_start]
+other = "开始窗口"
+
+[certificate_transparency_window_end]
+other = "结束窗口"
+
+[certification_practices_statement]
+other = "证书实践声明"
 
 [overview]
 other = "概述"
@@ -157,7 +166,7 @@ other = "与ACME RFC的区别"
 other = "利用Let's Encrypt和ACME自动化吸引客户"
 
 [paypal_donate_alt]
-other = "使用PayPal按钮进行捐赠"
+other = "PayPal 捐款"
 
 [paypal_donate_title]
 other = "使用PayPal捐款"
@@ -179,3 +188,12 @@ other = "（员工人数在 100 到 999 之间）"
 
 [1000_employees]
 other = "（员工人数大于 1000 人）"
+
+[subscribe_to_newsletter_headline]
+other = "订阅 Let's Encrypt 和其他 ISRG 项目的最新资讯"
+
+[site_banner_text]
+other = "推动构建更加光明的互联网，ISRG 成立十周年庆 →"
+
+[footer_copyright]
+other = "互联网安全研究组"

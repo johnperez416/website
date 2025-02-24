@@ -1,7 +1,6 @@
 ---
 title: Priključite se
 slug: getinvolved
-top_graphic: 5
 lastmod: 2019-11-04
 menu:
   main:
@@ -17,7 +16,7 @@ Uvek nam koristi pomoć pri odgovaranju na pitanja u [Let's Encrypt Zajednici](h
 
 ## Kod
 
-Takođe,često volimo da koristimo i pomoć oko razvoja softvera.Ceo naš izvorni kod je na [GitHub-u](https://github.com/letsencrypt/).
+Takođe,često volimo da koristimo i pomoć oko razvoja softvera. Ceo naš izvorni kod je na \[GitHub-u\](https://github.com/letsencrypt/).
 
 ### Klijentski softver
 
@@ -25,8 +24,8 @@ Takođe,često volimo da koristimo i pomoć oko razvoja softvera.Ceo naš izvorn
 
 ### Server-side CA softver
 
-[Boulder](https://github.com/letsencrypt/boulder) je implementacija Let's Encrypt CA. Temelji se na protokolu [ACME](https://tools.ietf.org/html/rfc8555), a prvenstveno je napisan u programskom jeziku Go. Sjajno mesto za početak je popis [pitanja od ljudi koji traže pomoć](https://github.com/letsencrypt/boulder/labels/help%20wanted) i [vodič za doprinose](https://github.com/letsencrypt/boulder/blob/master/CONTRIBUTING.md).
+[Boulder](https://github.com/letsencrypt/boulder) je implementacija Let's Encrypt CA. Temelji se na protokolu [ACME](https://tools.ietf.org/html/rfc8555), a prvenstveno je napisan u programskom jeziku Go. Sjajno mesto za početak je popis [pitanja od ljudi koji traže pomoć](https://github.com/letsencrypt/boulder/labels/help%20wanted) i [vodič za doprinose](https://github.com/letsencrypt/boulder/blob/main/docs/CONTRIBUTING.md).
 
 ### letsencrypt.org
 
-Možete učestvovati i unaprediti ovaj web sajt i dokumentaciju [ovde](https://github.com/letsencrypt/website) ili nam pomoći sa [prevodom na druge jezike](https://github.com/letsencrypt/website/blob/master/TRANSLATION.md).
+Možete učestvovati i unaprediti ovaj web sajt i dokumentaciju [ovde](https://github.com/letsencrypt/website) ili nam pomoći sa [prevodom na druge jezike](https://crowdin.com/project/lets-encrypt-website).
